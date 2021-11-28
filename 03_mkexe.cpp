@@ -7,6 +7,10 @@ static const unsigned char bin[] =
 int main(int argc, char** argv) {
     FILE* out = std::fopen("RenameMe.exe", "wb");
 
+    if(argc == 1) {
+        throw std::logic_error("Please Input At least 1 arguments.");
+    }
+
     if(!out) {
         throw std::runtime_error("[ERR] Write File Open Failed. .\\RenameMe.exe\n");
     }

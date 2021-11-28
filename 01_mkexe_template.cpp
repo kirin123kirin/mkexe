@@ -10,7 +10,6 @@ int main(void) {
         throw std::runtime_error(cmd);
     }
     try {
-        fputs("[ERR] Command Failed.\n", stderr);
         int c;
         while(1) {
             c = fgetc(out);
