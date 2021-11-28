@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "win64_d",
+            "includePath": [
+                ".",
+                "C:\\usr\\local\\LLVM\\include\\clang-c",
+                "C:\\usr\\local\\LLVM\\include\\llvm-c",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            // "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "C:/usr/local/LLVM/bin/clang++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "windows-clang-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

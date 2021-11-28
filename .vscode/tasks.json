@@ -1,0 +1,63 @@
+{
+  // Variable Example
+  // ${workspaceFolder}	/home/your-username/your-project
+  // ${workspaceFolderBasename}	your-project
+  // ${file}	/home/your-username/your-project/folder/file.ext
+  // ${relativeFile}	folder/file.ext
+  // ${relativeFileDirname}	folder
+  // ${fileBasename}	file.ext
+  // ${fileBasenameNoExtension}	file
+  // ${fileDirname}	/home/your-username/your-project/folder
+  // ${fileExtname}	.ext
+  // ${lineNumber}	VSCodeの編集画面で現在選択されている行番号
+  // ${selectedText}	VSCodeの編集画面で現在選択されているテキスト
+  // ${execPath}	実行中のVS Code実行可能ファイル「code.exe」のアドレス
+  // ${env:xxxxxx} 環境変数
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "win : Debug C++",
+      "command": "mkdir",
+      // http://solid.kmckk.com/doc/skit/current/solid_toolchain/overview.html
+      // https://clang.llvm.org/docs/ClangCommandLineReference.html
+      "args": [
+        "build",
+        ">nul",
+        "2>&1",
+        "||",
+        "chcp",
+        "65001",
+        "&&",
+        "clang",
+        "-v",
+        "-o",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+        "-Wall",
+        "${file}",
+        "&&",
+        "echo",
+        "Compier Success!!!!!!!!!!!!!!!!"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": [],
+      "group": "build"
+    }
+  ]
+}
