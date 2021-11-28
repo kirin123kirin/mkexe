@@ -1,4 +1,4 @@
-#mkexe.exe
+# mkexe.exe
 [日本語](https://github.com/kirin123kirin/mkexe/blob/main/README_ja.md)
 
 ## Overview
